@@ -1,0 +1,16 @@
+{
+  "name": "frotzbot",
+  "version": "1.0.0",
+  "description": "A wrapper for Frotz, mainly for IRC.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "irc": "^0.3.7",
+    "prompt": "^0.2.14",
+    "q": "^1.1.1"
+  }
+}
