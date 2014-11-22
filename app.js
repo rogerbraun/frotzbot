@@ -11,7 +11,7 @@ var vm, io, VM, IO;
 
 switch(nconf.get('vm')) {
   case 'frotz_wrapper':
-    VM = require('./modules/frotz_wrapper/frotz_wrapper.js');
+    VM = require('./modules/vm/frotz_wrapper/frotz_wrapper.js');
     break;
   default:
     throw new Error("Invalid vm name");

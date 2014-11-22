@@ -32,35 +32,13 @@ module.exports = function(settings) {
 
   this.handleOutput = handleOutput;
 
-  var gameListPromise = function() {
-    return deferredVM.promise.then(function(VM) {
-      return VM.gameList().join(", ");
-    });
-  }
-
-  var startGame = function(gameName) {
-    return deferredVM.promise.then(function(VM) {
-      VM.startGame(gameName);
-    });
-  }
-
   var greetUser = function(nick) {
     client.say(settings.channel, "Hi " + nick + "! If you want to play zork, start your message with a '!'.");
   };
 
   var messageHandler = function(message) {
     if(message.charAt(0) === '!') {
-      switch(true){
-        case /^!gamelist/.test(message):
-          gameListPromise().then(handleOutput);
-          break;
-        case /^!startgame/.test(message):
-          var gameName = message.split(" ").pop();
-          startGame(gameName);
-          break;
-        default:
-          handleInput(message.substring(1));
-      }
+      handleInput(message.substring(1));
     }
   };
 

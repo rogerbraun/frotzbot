@@ -1,0 +1,7 @@
+VMs are the wrappers that run the games, expect input and give output.
+
+They must implement these functions:
+
+handleInput(input) -> Handle player input (like 'look')
+
+start() -> Do something to start the VM. Will be called before everything else.

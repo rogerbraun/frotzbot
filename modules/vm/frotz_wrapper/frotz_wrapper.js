@@ -40,7 +40,17 @@ module.exports = function(settings) {
   }
 
   this.handleInput = function(input) {
-    frotz.stdin.write(input + "\n");
+    switch(true){
+      case /^gamelist/.test(input):
+        handleOutput(this.gameList());
+        break;
+      case /^startgame/.test(input):
+        var gameName = input.split(" ").pop();
+        this.startGame(gameName);
+        break;
+      default:
+        frotz.stdin.write(input + "\n");
+    }
   }
 
   return this;
