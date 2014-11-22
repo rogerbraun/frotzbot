@@ -6,10 +6,10 @@ module.exports = function() {
   prompt.delimiter = '';
   var Q = require('q');
 
-  var deferredInput = Q.defer();
+  var deferredVM = Q.defer();
 
-  this.setInputHandler = function(inputHandler) {
-    deferredInput.resolve(inputHandler);
+  this.setVM = function(VM) {
+    deferredVM.resolve(VM);
   }
 
   this.handleOutput = function(output) {
@@ -17,19 +17,22 @@ module.exports = function() {
     getConsoleInput();
   }
 
-  var handleInput = function(result){
+  var handleInput = function(input) {
+    deferredVM.promise.then(function(VM) {
+      VM.handleInput(input);
+    });
+  }
+
+  var handleConsoleInput = function(result){
     if(result['>'] == 'quit'){
       process.exit(0);
     }
-    return deferredInput.promise
-      .then(function(inputHandler){
-        return inputHandler(result['>']);
-      });
+    handleInput(result['>']);
   }
 
   var getConsoleInput = function() {
     Q.ninvoke(prompt, 'get', '>')
-      .then(handleInput)
+      .then(handleConsoleInput);
   }
 
   this.start = function() {

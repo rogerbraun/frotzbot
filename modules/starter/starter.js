@@ -2,7 +2,7 @@
 
 exports.startFrotzbot = function(frotzWrapper, ioHandler) {
   frotzWrapper.setOutputHandler(ioHandler.handleOutput);
-  ioHandler.setInputHandler(frotzWrapper.handleInput);
+  ioHandler.setVM(frotzWrapper);
   frotzWrapper.start();
   ioHandler.start();
 }

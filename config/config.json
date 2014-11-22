@@ -1,0 +1,13 @@
+{
+  "vm": "frotz_wrapper",
+  "io": "irc",
+  "vm_settings": {
+    "bin_path": "./frotz_bin/dfrotz",
+    "games_path": "./games"
+  },
+  "io_settings": {
+    "server": "irc.psigenix.net",
+    "nickname": "frotzbotDEV",
+    "channel": "#frotzbotdev"
+  }
+}

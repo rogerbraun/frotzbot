@@ -1,10 +1,34 @@
-var FrotzWrapper = require('./modules/frotz_wrapper/frotz_wrapper.js');
-var CMD = require('./modules/cmd/cmd.js');
-var IRC = require('./modules/irc/irc.js');
+var nconf = require('nconf');
+
+nconf
+  .argv()
+  .env()
+  .file({ file: "./config/config.json" });
+
 var starter = require('./modules/starter/starter.js');
 
+var vm, io, VM, IO;
 
-var frotz = new FrotzWrapper();
-var irc = new IRC();
+switch(nconf.get('vm')) {
+  case 'frotz_wrapper':
+    VM = require('./modules/frotz_wrapper/frotz_wrapper.js');
+    break;
+  default:
+    throw new Error("Invalid vm name");
+}
 
-starter.startFrotzbot(frotz, irc);
+switch(nconf.get('io')) {
+  case 'irc':
+    IO = require('./modules/irc/irc.js');
+    break;
+  case 'cmd':
+    IO = require('./modules/cmd/cmd.js');
+    break;
+  default:
+    throw new Error("Invalid io name");
+}
+
+vm = new VM(nconf.get('vm_settings'));
+io = new IO(nconf.get('io_settings'));
+
+starter.startFrotzbot(vm, io);
