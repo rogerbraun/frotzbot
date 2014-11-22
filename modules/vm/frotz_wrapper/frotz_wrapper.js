@@ -42,7 +42,7 @@ module.exports = function(settings) {
   this.handleInput = function(input) {
     switch(true){
       case /^gamelist/.test(input):
-        handleOutput(this.gameList());
+        handleOutput(this.gameList().join(', '));
         break;
       case /^startgame/.test(input):
         var gameName = input.split(" ").pop();
