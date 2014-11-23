@@ -2,6 +2,8 @@ VMs are the wrappers that run the games, expect input and give output.
 
 They must implement these functions:
 
-handleInput(input) -> Handle player input (like 'look')
+handleInput(input) -> Handle player input (like 'look' and 'gamelist').
+
+setOutputHandler(handler) -> A one-time setter for a function that you can use to output strings to the player. This will be called by the starter.
 
 start() -> Do something to start the VM. Will be called before everything else.
