@@ -3,7 +3,15 @@ var nconf = require('nconf');
 nconf
   .argv()
   .env()
-  .file({ file: "./config/config.json" });
+  .file({ file: "./config/config.json" })
+  .defaults({
+    io: 'cmd',
+    vm: 'frotz_wrapper',
+    vm_settings: {
+      games_path: './games',
+      bin_path: './frotz_bin/dfrotz'
+    }
+  });
 
 var starter = require('./modules/starter/starter.js');
 
