@@ -6,7 +6,7 @@
     "games_path": "./games"
   },
   "io_settings": {
-    "server": "irc.psigenix.net",
+    "server": "irc.someserver.net",
     "nickname": "frotzbotDEV",
     "channel": "#frotzbotdev"
   }
