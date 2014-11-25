@@ -33,7 +33,7 @@ module.exports = function(settings) {
   this.handleOutput = handleOutput;
 
   var greetUser = function(nick) {
-    client.say(settings.channel, "Hi " + nick + "! If you want to play zork, start your message with a '!'.");
+    handleOutput("Hi " + nick + "! If you want to play zork, start your message with a '!'.");
   };
 
   var messageHandler = function(message) {
