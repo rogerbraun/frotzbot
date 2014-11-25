@@ -7,6 +7,7 @@ Features
 --------
 * Command line frontend!
 * IRC frontend!
+* XMPP/Jabber/HipChat frontend!
 * Frotz backend!
 * Comes with a [game] [0]!
 
@@ -18,7 +19,7 @@ If you are using x64 Linux, you are in luck, as I already compiled frotz for you
 2. Do an `npm install`.
 3. Run `node app.js`
 
-You should now have frotzbot running with a command line frontend. If you want the irc frontend look into the example in the `config` folder.
+You should now have frotzbot running with a command line frontend. If you want the irc or xmpp frontend, look into the example in the `config` folder.
 
 If you are using a different OS, you will have to point the config to the frotz binary. I'm pretty sure it needs to be 'dumb Frotz' (see https://github.com/DavidGriffith/frotz/blob/master/DUMB), so try to get that.
 
@@ -35,7 +36,6 @@ And all your favorite infocom commands like `save`, `restore`, `look` and `take 
 Future
 ------
 * Use other interpreters than Frotz!
-* Use XMPP as a frontend!
 * Specs, tests, mocks, and other one-syllable words!
 * Hack the Gibson!
 
