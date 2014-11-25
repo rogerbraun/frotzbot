@@ -32,6 +32,9 @@ switch(nconf.get('io')) {
   case 'cmd':
     IO = require('./modules/cmd/cmd.js');
     break;
+  case 'xmpp':
+    IO = require('./modules/xmpp/xmpp.js');
+    break;
   default:
     throw new Error("Invalid io name");
 }

@@ -7,6 +7,7 @@
   "dependencies": {
     "irc": "^0.3.7",
     "nconf": "^0.6.9",
+    "node-xmpp": "^1.0.0-alpha2",
     "prompt": "^0.2.14",
     "q": "^1.1.1"
   }

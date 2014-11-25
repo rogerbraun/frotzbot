@@ -1,0 +1,14 @@
+{
+  "vm": "frotz_wrapper",
+  "io": "xmpp",
+  "vm_settings": {
+    "bin_path": "./frotz_bin/dfrotz_freebsd",
+    "games_path": "./games"
+  },
+  "io_settings": {
+    "jid": "somenumber@chat.hipchat.com",
+    "password": "zorkbot",
+    "room_nick": "Zork Bot",
+    "room_jid": "somenumber_somechannel@conf.hipchat.com"
+  }
+}
